@@ -11,18 +11,18 @@
 
   <style>
     body {
-      background: #0b0d10;
+      background: #1d970d;
       color: #e8eaed;
     }
 
     .navbar,
     .offcanvas {
-      background: #14181f;
+      background: #0b8146;
     }
 
     .card {
-      background: #171a21;
-      border: 1px solid #232833;
+      background: #0e5514;
+      border: 1px solid #0d721b;
       height: 100%;
     }
 
@@ -34,152 +34,52 @@
       width: 100%;
       aspect-ratio: 3/4;
       object-fit: cover;
-      background: #0b0d10;
+      background: #0b976d;
     }
 
     .search-hero {
-      background: linear-gradient(180deg, #10141b 0%, #0b0d10 100%);
+      background: linear-gradient(180deg, #349b14 0%, #0d9408 100%);
       border-bottom: 1px solid #232833;
     }
 
     .form-control,
     .form-select,
     .form-button {
-      background: #0f131a;
-      color: #e8eaed;
-      border-color: #232833;
+      background: #07a06d;
+      color: #000000;
+      border-color: #068d59;
     }
 
     .form-button {
-      background: #0758d2;
+      background: #07d835;
     }
 
     .form-control::placeholder {
-      color: #9aa4af;
+      color: #000000;
     }
 
     .page-link {
-      background: #0f131a;
-      color: #e8eaed;
-      border-color: #232833;
+      background: #05a34c;
+      color: #0a9621;
+      border-color: #0ca507;
     }
 
     .page-item.active .page-link {
-      background: #375a7f;
-      border-color: #375a7f;
+      background: #06641d;
+      border-color: #066112;
     }
 
     a,
     a:hover {
       color: #9ad0ff;
     }
+  .page-button {
+    background-color: #06641d;
+    }
   </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="#"> </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="offcanvas offcanvas-end text-bg-dark" id="menu">
-        <div class="offcanvas-header">
-          <h5 class="offcanvas-title">Menu</h5>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Entrar</a></li>
-            <li class="nav-item"><a class="nav-link" href="/login">Cadastrar</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero / Busca -->
-  <section class="py-5 search-hero">
-    <div class="container">
-      <div class="row g-3 align-items-end">
-        <div class="col-12 col-lg-6">
-          <h1 class="fw-bold mb-2">Contatos Web</h1>
-          <p class="text-secondary mb-0">Busca pública. Para comentar, faça login.</p>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="row g-2">
-            <div class="col-12 col-md-6">
-              <input id="q" type="search" class="form-control form-control-lg"
-                placeholder="Buscar por título ou sinopse…">
-            </div>
-            <div class="col-4 col-md-3">
-              <select id="typeFilter" class="form-select">
-                <option value="">Todos</option>
-                <option value="BOOK">Livros</option>
-                <option value="MOVIE">Filmes</option>
-                <option value="ANIME">Animes</option>
-                <option value="SERIES">Séries</option>
-              </select>
-            </div>
-            <div class="col-3 col-md-3">
-              <button type="button" class="btn form-button">Buscar</button>
-            </div>
-            <div class="col-12">
-              <div class="d-flex flex-wrap gap-2">
-                <button data-type="" class="btn btn-sm btn-outline-light px-3 type-chip active">Todos</button>
-                <button data-type="BOOK" class="btn btn-sm btn-outline-light px-3 type-chip">Livro</button>
-                <button data-type="MOVIE" class="btn btn-sm btn-outline-light px-3 type-chip">Filme</button>
-                <button data-type="ANIME" class="btn btn-sm btn-outline-light px-3 type-chip">Anime</button>
-                <button data-type="SERIES" class="btn btn-sm btn-outline-light px-3 type-chip">Série</button>
-                <span id="resultCount" class="ms-auto text-secondary small"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Grid -->
-  <main class="py-4">
-    <div class="container">
-      <div id="grid" class="row g-3">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
-          <div class="card h-100 shadow-sm">
-            <img class="cover" src="https://placehold.co/600x400" alt="Capa de Teste">
-            <div class="card-body d-flex flex-column">
-              <div class="d-flex justify-content-between align-items-start mb-2">
-                <h5 class="card-title me-2">Teste</h5>
-                <span class="badge badge-type ${b.cls}">Teste</span>
-              </div>
-              <p class="card-text text-secondary small mb-3">Resumo</p>
-              <div class="mt-auto d-flex justify-content-between align-items-center">
-                <small class="text-secondary">Data Lançamento</small>
-                <a class="stretched-link" href="/item/id">Detalhes</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Paginação -->
-      <nav class="mt-4">
-        <ul id="pagination" class="pagination justify-content-center"></ul>
-      </nav>
-    </div>
-  </main>
-
-  <footer class="py-4 border-top border-secondary" style="border-color:#232833!important;">
-    <div class="container text-center text-secondary small">
-      © <span id="year"></span>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-    crossorigin="anonymous"></script>
-</body>
+ 
 
 </html>
