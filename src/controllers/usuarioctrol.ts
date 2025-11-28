@@ -35,7 +35,7 @@ export async function registrar(req: Request, res: Response) {
     await insert(usuario);
 
     return res.render('login', {
-        reponse: {
+        response: {
             type: 'sucess',
             value: 'Usuario cadastrado com sucesso!!'
         }
@@ -64,8 +64,11 @@ export async function login(req:Request,res:Response) {
     })
   }
 
-  res.render('dashboard',{
-    nome: usuario.nome
-  })
+  (req.session as any).usuario = {
+    nome: usuario.nome,
+    email: usuario.email,
+    id: usuario.id
+  }
+  res.redirect('/adm');
 
 }
